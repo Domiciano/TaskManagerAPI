@@ -7,37 +7,45 @@ import Comments from "../components/Comments";
 
 function ComponentsPage() {
     const post = {
-        id: 1,
-        name: "Kevin Rodriguez",
-        username: "KelooR",
-        content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Aenean congue metus libero, sed maximus arcu aliquet vitae. 
-                        Fusce semper, ante eget eleifend tempor, neque nunc suscipit 
-                        elit, ac finibus justo tortor vitae metus. Morbi sed est at 
-                        enim ornare laoreet. Donec mollis justo eget posuere cursus. 
-                        Curabitur viverra tellus in tincidunt mollis. Nulla facilisi`,
-        createdAt: "2025-05-31T14:00:00",
-        comments: [
-            { 
-                id: 1, 
-                name: "Kevin Rodriguez", 
-                username: "KelooR", 
-                content: "¡Gran post!",
-                createdAt: "2025-05-31T15:00:00"
+        "id": 1,
+        "content": "Primer post de Alice",
+        "createdAt": "2025-05-31T14:00:00.000+00:00",
+        "user": {
+            "id": 2,
+            "username": "asmith",
+            "email": "asmith@example.com",
+            "firstName": "Alice",
+            "lastName": "Smith",
+            "phoneNumber": "9876543210"
+        },
+        "comments": [
+            {
+                "id": 1,
+                "content": "¡Buen post, Alice!",
+                "createdAt": "2025-05-31T15:00:00.000+00:00",
+                "postId": 1,
+                "user": {
+                    "id": 3,
+                    "username": "nmartinez",
+                    "email": "nmartinez@example.com",
+                    "firstName": "Natalia",
+                    "lastName": "Martinez",
+                    "phoneNumber": "3219876543"
+                }
             },
-            { 
-                id: 2, 
-                name: "Usuario Genérico", 
-                username: "User123", 
-                content: "Interesante contenido, gracias por compartir.",
-                createdAt: "2025-05-31T16:15:00"
-            },
-            { 
-                id: 3, 
-                name: "Jane Doe", 
-                username: "JaneDoe", 
-                content: "Me encanta tu estilo de escritura.",
-                createdAt: "2025-05-31T17:00:00"
+            {
+                "id": 2,
+                "content": "Gracias por compartir.",
+                "createdAt": "2025-05-31T15:05:00.000+00:00",
+                "postId": 1,
+                "user": {
+                    "id": 3,
+                    "username": "nmartinez",
+                    "email": "nmartinez@example.com",
+                    "firstName": "Natalia",
+                    "lastName": "Martinez",
+                    "phoneNumber": "3219876543"
+                }
             }
         ]
     };
@@ -51,10 +59,10 @@ function ComponentsPage() {
 
             <Grid container spacing={2} sx={{ mt: 2 }}>
                 <Grid size={6}>
-                    <UserCard name="Kevin Rodriguez" username="KelooR"/>
+                    <UserCard name={`${post.user.firstName} ${post.user.lastName}`} username={post.user.username}/>
                 </Grid>
                 <Grid size={6}>
-                    <UserPostForm name="Kevin Rodriguez" username="KelooR" />
+                    <UserPostForm name={`${post.user.firstName} ${post.user.lastName}`} username={post.user.username} />
                 </Grid>
                 <Grid size={6}>
                     <Post post={post} />

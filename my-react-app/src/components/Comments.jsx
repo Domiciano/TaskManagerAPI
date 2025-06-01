@@ -36,12 +36,12 @@ function Comments({ comments }) {
                             }}
                         >
                             <Box sx={{ minWidth: 48 }}>
-                                <CustomAvatar name={comment.name} />
+                                <CustomAvatar name={`${comment.user.firstName} ${comment.user.lastName}`} />
                             </Box>
                             <Box sx={{ flex: 1 }}>
                                 <Box sx={{ display: "flex", alignItems: "center" }}>
-                                    <strong>{comment.name}</strong>
-                                    <span style={{ marginLeft: 8, color: "#555" }}>@{comment.username}</span>
+                                    <strong>{`${comment.user.firstName} ${comment.user.lastName}`}</strong>
+                                    <span style={{ marginLeft: 8, color: "#555" }}>@{comment.user.username}</span>
                                     <span style={{ marginLeft: 16, color: "#888", fontSize: 12 }}>
                                         {relativeTimeConversion(comment.createdAt)}
                                     </span>

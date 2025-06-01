@@ -33,10 +33,10 @@ function Post({ post }) {
                     width: "100%"
                 }}
             >
-                <CustomAvatar name={post.name} />
+                <CustomAvatar name={`${post.user.firstName} ${post.user.lastName}`} />
                 <Box sx={{ mt: 1, textAlign: "start" }}>
-                    <Typography variant="h6">{post.name}</Typography>
-                    <Typography variant="subtitle1" color="textSecondary">@{post.username}</Typography>
+                    <Typography variant="h6">{`${post.user.firstName} ${post.user.lastName}`}</Typography>
+                    <Typography variant="subtitle1" color="textSecondary">@{post.user.username}</Typography>
                 </Box>
             </Box>
             <Typography variant="body1" sx={{ mt: 1 }}>
