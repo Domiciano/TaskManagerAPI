@@ -41,4 +41,8 @@ public class HomeController {
 
         return ResponseEntity.ok(token);
     }
+
+    //Alejo: por favor incluir ademas del token el nombre del usuario y el username para que ellos no
+    //tengan que decodificar el token en front y quede mas simple implementar el componente de usuario autenticado
+
 }
