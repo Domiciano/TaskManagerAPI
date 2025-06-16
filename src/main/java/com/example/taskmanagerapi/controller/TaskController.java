@@ -17,13 +17,13 @@ public class TaskController {
     @Autowired
     private TaskService taskService;
 
-    @GetMapping("/{studentId}")
+    @GetMapping("/student/{studentId}")
     public ResponseEntity<List<TaskDTO>> getTasksByStudentId(@PathVariable Long studentId) {
         List<TaskDTO> tasks = taskService.getTasksByStudentId(studentId);
         return ResponseEntity.ok(tasks);
     }
 
-    @PostMapping("/{studentId}")
+    @PostMapping("/student/{studentId}")
     public ResponseEntity<TaskDTO> createTask(@PathVariable Long studentId, @RequestBody TaskDTO taskDto) {
         TaskDTO createdTask = taskService.createTask(taskDto, studentId);
         return new ResponseEntity<>(createdTask, HttpStatus.CREATED);

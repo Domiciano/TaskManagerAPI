@@ -6,6 +6,7 @@
       <list>
         <option value="$PROJECT_DIR$/TaskManagerAPI/pom.xml" />
         <option value="$PROJECT_DIR$/evaluation-rest-solution/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
